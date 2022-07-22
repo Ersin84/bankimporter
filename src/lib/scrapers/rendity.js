@@ -4,7 +4,7 @@ module.exports = {
     id: 'rendity',
     name: 'Rendity',
     expectedmimetype: 'text/csv',
-    url: 'https://rendity.com/dashboard/login',
+    url: 'https://next-rendity.vercel.app/dashboard/login',
     filepattern: /Invoice_\d{10}.csv/g,
     steps: [new DL.Step('Start',
         async function(browser, page, args) {
@@ -25,7 +25,7 @@ module.exports = {
         }),
         new DL.Step('Wallet',
         async function(browser, page, args) {
-            await page.goto('https://rendity.com/dashboard/wallet');
+            await page.goto('https://next-rendity.vercel.app/dashboard/wallet');
         }),
         new DL.Step('Opendownload', 
         async function(browser, page, args) {
@@ -39,7 +39,7 @@ module.exports = {
         }),
         new DL.Step('Logout',
         async function(browser, page, args) {
-            await page.goto('https://rendity.com/dashboard/login/logout');
+            await page.goto('https://next-rendity.vercel.app/dashboard/login/logout');
         })
     ],
     requiredarguments: ['username', 'password']
